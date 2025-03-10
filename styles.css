@@ -82,3 +82,86 @@ button.attend-btn img {
     border: 1px solid #ddd;
     border-radius: 5px; 
 }
+
+/* Event Details */
+.event-details, .attendance-list {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .event-table, .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .event-table th, .event-table td,
+  .table th, .table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .event-table th, .table thead tr {
+    background: #2563eb;
+    color: white;
+  }
+  
+  .table tbody tr:nth-of-type(odd) {
+    background: #f3f3f3;
+  }
+  
+  .table tbody tr:last-of-type {
+    border-bottom: 2px solid #2563eb;
+  }
+  
+  /* Styling the radio buttons */
+  .radio-green {
+    accent-color: green;
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+  
+  .radio-red {
+    accent-color: red;
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+  
+  .btn-att{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 40px;
+  
+  }
+  
+  .post-att{
+    border-radius: 10px;
+    background-color: #22c55e;
+    color: white;
+    height: 40px;
+    font-size: medium;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  
+  }
+  
+  .back{
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+    height: 40px;
+    font-size: medium;
+    border: none;
+    cursor: pointer;
+  }
+  
+  
+  
+  
+  

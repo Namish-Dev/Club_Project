@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 <td>${event.name}</td>
                 <td>${event.attendees}</td>
                 <td>
-                    <button class="attend-btn" onclick="increaseAttendees(${index})">
-                        ✅ Attend
+                    <button class="attend-btn" onclick="increaseAttendees(${index}); openAttendance('${event.name}')">
+                    ✅ Attend
                     </button>
                 </td>
             `;
@@ -32,6 +32,10 @@ document.addEventListener("DOMContentLoaded", function () {
     window.increaseAttendees = function (index) {
         events[index].attendees += 1;
         renderEvents();
+    };
+
+    window.openAttendance = function (eventName) {
+        window.location.href = `attendance.html?event=${encodeURIComponent(eventName)}`;
     };
 
     addEventBtn.addEventListener("click", function () {

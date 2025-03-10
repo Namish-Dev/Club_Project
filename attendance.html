@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Attendance</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+            <div class="event-details">
+                <h1>Event Details</h1>
+                <table class="event-table">
+                  <tr>
+                    <th>Event Name</th>
+                    <td id="event-name">Loading...</td>
+                  </tr>
+                  <tr>
+                    <th>Date</th>
+                    <td>March 6, 2025</td>
+                  </tr>
+                  <tr>
+                    <th>Venue</th>
+                    <td>VDC Hall</td>
+                  </tr>
+                  <tr>
+                    <th>Organizers</th>
+                    <td>MDC X Gusac</td>
+                  </tr>
+                </table>
+            </div>
+
+            <div class="attendance-list">
+                <h1>Attendance List</h1>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Domain</th>
+                            <th>Present</th>
+                            <th>Absent</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>abc</td>
+                            <td>WebArc</td>
+                            <td>
+                                <input type="radio" name="status_abc" value="Present" class="radio-green" checked onclick="markAttendance(this, 'abc')">
+                            </td>
+                            <td>
+                                <input type="radio" name="status_abc" value="Absent" class="radio-red" onclick="markAttendance(this, 'abc')">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>xyz</td>
+                            <td>Dataverse</td>
+                            <td>
+                                <input type="radio" name="status_xyz" value="Present" class="radio-green" checked onclick="markAttendance(this, 'xyz')">
+                            </td>
+                            <td>
+                                <input type="radio" name="status_xyz" value="Absent" class="radio-red" onclick="markAttendance(this, 'xyz')">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>pqr</td>
+                            <td>CP</td>
+                            <td>
+                                <input type="radio" name="status_pqr" value="Present" class="radio-green" checked onclick="markAttendance(this, 'pqr')">
+                            </td>
+                            <td>
+                                <input type="radio" name="status_pqr" value="Absent" class="radio-red" onclick="markAttendance(this, 'pqr')">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="btn-att">
+                <button class="post-att" onclick="postAttendance()">Post Attendance</button>
+                <button class= "back" onclick="goBack()">Go Back</button>
+            </div>
+
+            
+        </div>
+    </div>
+
+    <script>
+
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+  
+        const eventName = getQueryParam("event");
+        
+   
+        if (eventName) {
+            document.getElementById("event-name").textContent = eventName;
+        }
+
+        function markAttendance(radio, studentName) {
+            console.log(`${studentName} is marked as ${radio.value}`);
+        }
+
+        function goBack() {
+            window.history.back(); 
+        }
+        function postAttendance() {
+            alert("Attendance posted successfully!");
+        }
+
+    </script>
+</body>
+</html>
